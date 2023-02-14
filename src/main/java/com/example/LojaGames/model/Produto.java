@@ -2,6 +2,7 @@ package com.example.LojaGames.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -19,11 +20,11 @@ public class Produto {
     @Size(max = 500, message = "O atributo descrição deve ter no maximo 500 caracteres")
     private String descricao;
 
-    @NotBlank(message = "O atributo quantidade é obrigatório")
-    private int quantidade;
+    @NotNull(message = "O atributo quantidade é obrigatório")
+    private Integer quantidade;
 
-    @NotBlank(message = "O atributo preço é obrigatório")
-    private  float preco;
+    @NotNull(message = "O atributo preço é obrigatório")
+    private  Double preco;
 
     @Size(max = 5000, message = "O atributo foto deve ter no maximo 5000 caracteres")
     private String foto;
@@ -57,15 +58,15 @@ public class Produto {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
 
-    public float getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(float preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
