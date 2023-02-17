@@ -3,6 +3,7 @@ package com.example.LojaGames.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -21,7 +22,7 @@ public class Usuario {
     @Size(max = 200, message = "O atributo nome deve ter no maximo 200 caracteres")
     private String nome;
 
-    @NotBlank(message = "O atributo data de nascimento é obrigatório")
+    @NotNull(message = "O atributo data de nascimento é obrigatório")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
 
@@ -29,7 +30,7 @@ public class Usuario {
     @Email(message = "Digite um Email válido")
     private String email;
 
-    @NotBlank(message = "O atributo Senha é obrigatótio")
+    @NotNull(message = "O atributo Senha é obrigatótio")
     @Size(min = 8, message = "A senha deve ter no minimo 8 caracteres")
     private String senha;
 
